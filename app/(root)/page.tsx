@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
 
 const Home = async () => {
-  const session = await auth();
+  await auth();
 
   return (
     <>
