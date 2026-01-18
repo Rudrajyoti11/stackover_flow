@@ -1,15 +1,8 @@
-﻿"use client";
+"use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
 
-import {
-  Select,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectGroup,
-} from "@/components/ui/select";
+import { Select, SelectItem, SelectTrigger, SelectValue, SelectContent, SelectGroup } from "@/components/ui/select";
 import { formUrlQuery } from "@/lib/url";
 import { cn } from "@/lib/utils";
 
@@ -24,11 +17,7 @@ interface Props {
   containerClasses?: string;
 }
 
-const CommonFilter = ({
-  filters,
-  otherClasses = "",
-  containerClasses = "",
-}: Props) => {
+const CommonFilter = ({ filters, otherClasses = "", containerClasses = "" }: Props) => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -46,10 +35,7 @@ const CommonFilter = ({
 
   return (
     <div className={cn("relative", containerClasses)}>
-      <Select
-        onValueChange={handleUpdateParams}
-        defaultValue={paramsFilter || undefined}
-      >
+      <Select onValueChange={handleUpdateParams} defaultValue={paramsFilter || undefined}>
         <SelectTrigger
           className={cn(
             "body-regular no-focus light-border background-light800_dark300 text-dark500_light700 border px-5 py-2.5",
